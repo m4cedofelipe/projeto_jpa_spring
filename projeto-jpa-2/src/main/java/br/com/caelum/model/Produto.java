@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
@@ -25,6 +26,16 @@ public class Produto {
 	private String nome;
 	@NotEmpty
 	private String linkDaFoto;
+
+	/*
+	 * A anotação (@Version) para versionar todo update feito o hibernate irá
+	 * verificar automaticamente o valor desse campo. 
+	 * Caso o registro no banco possua um valor menor do que o está sendo enviado para o campo versao, ele
+	 * aceita a atualização e incrementa seu valor. Caso possua um valor maior, será
+	 * disparado uma exceção do tipo StaleObjectStateException dentro de uma javax.persistence.OptimisticLockException.
+	 */
+	@Version
+	private int versao;
 
 	@NotEmpty
 	@Column(columnDefinition = "TEXT")
@@ -100,6 +111,14 @@ public class Produto {
 
 	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
+	}
+
+	public int getVersao() {
+		return versao;
+	}
+
+	public void setVersao(int versao) {
+		this.versao = versao;
 	}
 
 }
