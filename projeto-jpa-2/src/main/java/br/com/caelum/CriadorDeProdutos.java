@@ -33,7 +33,7 @@ public class CriadorDeProdutos {
 			protected void doInTransactionWithoutResult(TransactionStatus status) {
 
 				Loja casaDoCodigo = new Loja();
-				casaDoCodigo.setNome("Casa do Código");
+				casaDoCodigo.setNome("Casa do C�digo");
 
 				em.persist(casaDoCodigo);
 
@@ -42,14 +42,14 @@ public class CriadorDeProdutos {
 
 				em.persist(musicalAlegre);
 
-				Categoria tecnologia = new Categoria("Tecnologia");
+				Categoria tecnologia = new Categoria("T�cnologia");
 				em.persist(tecnologia);
 
-				Categoria musica = new Categoria("Música");
+				Categoria musica = new Categoria("M�sica");
 				em.persist(musica);
 
 				Produto cursoDeViolao = new Produto();
-				cursoDeViolao.setNome("Curso de Violão");
+				cursoDeViolao.setNome("Curso de Viol�o");
 				cursoDeViolao.setLoja(musicalAlegre);
 				cursoDeViolao.setPreco(49.0);
 				cursoDeViolao
@@ -62,13 +62,13 @@ public class CriadorDeProdutos {
 
 				Produto livroDeArquitetura = new Produto();
 				livroDeArquitetura
-						.setNome("Introduçao a Arquitetura Java e Design de projetos com Java");
+						.setNome("Introdu��o a Arquitetura Java e Design de projetos com Java");
 				livroDeArquitetura.setLoja(casaDoCodigo);
 				livroDeArquitetura.setPreco(30.0);
 				livroDeArquitetura.adicionarCategorias(tecnologia);
 				livroDeArquitetura
 						.setDescricao("Neste livro, os autores, conhecidos especialistas da "
-								+ " área, apresentam muitos tópicos que aparecem com frequência"
+								+ " área, apresentam muitos tópicos que aparecem com frequencia"
 								+ " na plataforma Java, incluindo desde modelagem e design das "
 								+ "classes, até detalhes importantes das tecnologias mais utilizadas."
 								+ "  Sempre com uma visão técnica e prática capaz de elucidar muitas "
@@ -89,8 +89,8 @@ public class CriadorDeProdutos {
 						.setDescricao("Criado para simplificar o desenvolvimento de aplicações Java, "
 								+ "o Spring se tornou um dos frameworks de mais destaque dentro desse grande ambiente.  "
 								+ "Aprenda muito mais que o básico do Spring, desde o tradicional Container de Inversão "
-								+ "de Controle e Injeção de Dependências, passando pelos robustos módulos de segurança, "
-								+ "transações, programação orientada a aspectos e também o fantástico módulo MVC, o SpringMVC.");
+								+ "de Controle e Injeção de Dependências, passando pelos robustos módulos de seguran�a, "
+								+ "transa��es, programa��o orientada a aspectos e tambem o fantastico módulo MVC, o SpringMVC.");
 
 				livroDeSpring
 						.setLinkDaFoto("http://cdn.shopify.com/s/files/1/0155/7645/products/spring-framework-featured_large.png?v=1411567960");
@@ -98,9 +98,9 @@ public class CriadorDeProdutos {
 				em.persist(livroDeSpring);
 
 				Produto violao = new Produto();
-				violao.setNome("Violão");
+				violao.setNome("Viol�o");
 				violao.setLoja(musicalAlegre);
-				violao.setDescricao("Excelente violão");
+				violao.setDescricao("Excelente viol�o");
 				violao.setPreco(500.0);
 				violao.adicionarCategorias(musica);
 				violao.setLinkDaFoto("http://www.marillac.g12.br/imgs/atividade%20complementar/violao.jpg");

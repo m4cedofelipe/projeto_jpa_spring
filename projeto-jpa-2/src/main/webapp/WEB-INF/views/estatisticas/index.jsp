@@ -24,11 +24,14 @@
 							<tr>
 								<td>Cache</td>
 								<!-- Hit -->
-								<td></td>
+								<!-- Conta a quantidade de buscas feitas que estão no Cache	-->
+								<td>${statistics.queryCacheHitCount}</td>
 								<!-- Miss -->
-								<td></td>
-								<! -- Conections -->
-								<td></td>
+								<!--  Conta a quantidade de Buscas feitas no banco (não estavam no Cache) -->
+								<td>${statistics.queryCacheMissCount}</td>
+								<!-- Connections Count-->
+								<!-- Mostra a quantidade de conexões abertas -->
+								<td>${statistics.connectCount}</td>
 							</tr>
 						</tbody>
 					</table>
