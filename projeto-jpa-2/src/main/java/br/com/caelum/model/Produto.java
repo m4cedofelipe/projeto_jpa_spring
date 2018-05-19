@@ -14,10 +14,20 @@ import javax.persistence.Version;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Produto {
+
+	/* (***	Estrategia de Cache	***)
+	 * 
+	 * Nessa situação, podemos usar a estratégia NON_STRICT_READ_WRITE ideal, ou
+	 * seja, quando não há problemas em ler dados inconsistentes caso hajam
+	 * alterações simultâneas.
+	 */
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,10 +39,20 @@ public class Produto {
 
 	/*
 	 * A anotação (@Version) para versionar todo update feito o hibernate irá
-	 * verificar automaticamente o valor desse campo. 
-	 * Caso o registro no banco possua um valor menor do que o está sendo enviado para o campo versao, ele
+	 * verificar automaticamente o valor desse campo. Caso o registro no banco
+	 * possua um valor menor do que o está sendo enviado para o campo versao, ele
 	 * aceita a atualização e incrementa seu valor. Caso possua um valor maior, será
-	 * disparado uma exceção do tipo StaleObjectStateException dentro de uma javax.persistence.OptimisticLockException.
+	 * disparado uma exceção do tipo StaleObjectStateException dentro de uma
+	 * javax.persistence.OptimisticLockException.
+	 */
+
+	/*
+	 * (LOCK PESSIMISTA & LOCK OTIMISTA)
+	 * 
+	 * Quando usamos (Lock Pessimista) pedimos uma trava o registro no banco
+	 * enquanto ocorre o processo de edição. Portanto, caso alguém já esteja
+	 * atualizando um certo registro, outra pessoa ao tentar atualizar o mesmo
+	 * registro ficará travada aguardando a liberação do registro.
 	 */
 	@Version
 	private int versao;
@@ -45,6 +65,7 @@ public class Produto {
 	private double preco;
 
 	@ManyToMany
+	@Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 	private List<Categoria> categorias = new ArrayList<>();
 
 	@Valid
