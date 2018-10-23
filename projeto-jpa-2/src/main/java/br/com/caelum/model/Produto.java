@@ -22,7 +22,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Produto {
 
-	/* (***	Estrategia de Cache	***)
+	/*
+	 * (*** Estrategia de Cache ***)
 	 * 
 	 * Nessa situação, podemos usar a estratégia NON_STRICT_READ_WRITE ideal, ou
 	 * seja, quando não há problemas em ler dados inconsistentes caso hajam
@@ -64,8 +65,14 @@ public class Produto {
 	@Min(20)
 	private double preco;
 
+	/*
+	 * Deixei definido como CacheConcurrencyStrategy.NONSTRICT_READ_WRITE, que diz
+	 * que iremos eventualmente editar essa entidade e que o controle de
+	 * concorrência pode ser mais “simples”, pois é muito pouco provável que dois
+	 * processos estejam alterando ao mesmo tempo essa entidade.
+	 */
 	@ManyToMany
-	@Cache(usage=CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+	@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 	private List<Categoria> categorias = new ArrayList<>();
 
 	@Valid

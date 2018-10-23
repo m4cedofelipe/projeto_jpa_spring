@@ -33,7 +33,7 @@ public class CriadorDeProdutos {
 			protected void doInTransactionWithoutResult(TransactionStatus status) {
 
 				Loja casaDoCodigo = new Loja();
-				casaDoCodigo.setNome("Casa do C�digo");
+				casaDoCodigo.setNome("Casa do Código");
 
 				em.persist(casaDoCodigo);
 
@@ -42,27 +42,25 @@ public class CriadorDeProdutos {
 
 				em.persist(musicalAlegre);
 
-				Categoria tecnologia = new Categoria("T�cnologia");
+				Categoria tecnologia = new Categoria("Técnologia");
 				em.persist(tecnologia);
 
-				Categoria musica = new Categoria("M�sica");
+				Categoria musica = new Categoria("Música");
 				em.persist(musica);
 
 				Produto cursoDeViolao = new Produto();
-				cursoDeViolao.setNome("Curso de Viol�o");
+				cursoDeViolao.setNome("Curso de Violão");
 				cursoDeViolao.setLoja(musicalAlegre);
 				cursoDeViolao.setPreco(49.0);
-				cursoDeViolao
-						.setDescricao("Estude com os melhores professores e aprenda no seu ritmo, sem sair de casa.");
+				cursoDeViolao.setDescricao("Estude com os melhores professores e aprenda no seu ritmo, sem sair de casa.");
 				cursoDeViolao.adicionarCategorias(tecnologia, musica);
-				cursoDeViolao
-						.setLinkDaFoto("https://pbs.twimg.com/profile_images/378800000825434860/12136ee913ed4f44860914d44650144e.png");
+				cursoDeViolao.setLinkDaFoto("https://pbs.twimg.com/profile_images/378800000825434860/12136ee913ed4f44860914d44650144e.png");
 
 				em.persist(cursoDeViolao);
 
 				Produto livroDeArquitetura = new Produto();
 				livroDeArquitetura
-						.setNome("Introdu��o a Arquitetura Java e Design de projetos com Java");
+						.setNome("Introdução a Arquitetura Java e Design de projetos com Java");
 				livroDeArquitetura.setLoja(casaDoCodigo);
 				livroDeArquitetura.setPreco(30.0);
 				livroDeArquitetura.adicionarCategorias(tecnologia);
@@ -75,8 +73,7 @@ public class CriadorDeProdutos {
 								+ "questões enfrentadas tanto pelo profissional iniciante quanto por "
 								+ "aquele que está adquirindo mais experiência na plataforma.");
 
-				livroDeArquitetura
-						.setLinkDaFoto("http://www.arquiteturajava.com.br/img/capa-livro.png");
+				livroDeArquitetura.setLinkDaFoto("http://www.arquiteturajava.com.br/img/capa-livro.png");
 
 				em.persist(livroDeArquitetura);
 
@@ -89,8 +86,8 @@ public class CriadorDeProdutos {
 						.setDescricao("Criado para simplificar o desenvolvimento de aplicações Java, "
 								+ "o Spring se tornou um dos frameworks de mais destaque dentro desse grande ambiente.  "
 								+ "Aprenda muito mais que o básico do Spring, desde o tradicional Container de Inversão "
-								+ "de Controle e Injeção de Dependências, passando pelos robustos módulos de seguran�a, "
-								+ "transa��es, programa��o orientada a aspectos e tambem o fantastico módulo MVC, o SpringMVC.");
+								+ "de Controle e Injeção de Dependências, passando pelos robustos módulos de segurança, "
+								+ "transações, programação orientada a aspectos e tambem o fantastico módulo MVC, o SpringMVC.");
 
 				livroDeSpring
 						.setLinkDaFoto("http://cdn.shopify.com/s/files/1/0155/7645/products/spring-framework-featured_large.png?v=1411567960");
@@ -98,12 +95,12 @@ public class CriadorDeProdutos {
 				em.persist(livroDeSpring);
 
 				Produto violao = new Produto();
-				violao.setNome("Viol�o");
+				violao.setNome("Violão");
 				violao.setLoja(musicalAlegre);
-				violao.setDescricao("Excelente viol�o");
+				violao.setDescricao("Excelente violão");
 				violao.setPreco(500.0);
 				violao.adicionarCategorias(musica);
-				violao.setLinkDaFoto("http://www.marillac.g12.br/imgs/atividade%20complementar/violao.jpg");
+				violao.setLinkDaFoto("https://http2.mlstatic.com/D_Q_NP_793866-MLB27572116222_062018-Q.jpg");
 
 				em.persist(violao);
 

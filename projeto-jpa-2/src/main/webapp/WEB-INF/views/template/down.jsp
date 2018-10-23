@@ -4,8 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
-</div>
-</div>
 <div class="col-sm-4">
 	<div class="panel panel-default">
 		<div class="panel-heading">Buscar por:</div>

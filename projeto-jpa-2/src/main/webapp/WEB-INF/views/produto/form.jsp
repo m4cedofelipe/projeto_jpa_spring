@@ -14,9 +14,7 @@
 		<div class="panel-body">
 			<form action="${spring:mvcUrl('cadastraProduto').build()}" method="post">
 				<div class="form-group">
-					<label for="nome">
-						Nome:
-					</label>
+					<label for="nome"> Nome: </label>
 					<input type="text" class="form-control" name="nome" value="${produto.nome}">
 					<form:errors path="produto.nome" />
 				</div>
@@ -55,9 +53,8 @@
 					<form:errors path="produto.loja.id" />
 				</div>
 				<div class="form-group">
-					<label for="descricao">
-						Categoria:
-					</label><br>
+					<label for="descricao">Categoria:</label>
+					<br>
 					<c:forEach items="${categorias}" var="categoria" varStatus="status">
 						<c:set var="contains" value="false"/>
 						

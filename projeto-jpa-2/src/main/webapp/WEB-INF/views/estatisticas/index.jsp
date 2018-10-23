@@ -11,7 +11,9 @@
 		<div class="panel-body">
 			<div class="container">
 				<div class="col-sm-8">
+				
 					<a href="<c:url value="/estatisticas/limpar"/>">Limpar</a>
+				
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -22,7 +24,6 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>Cache</td>
 								<!-- Hit -->
 								<!-- Conta a quantidade de buscas feitas que estão no Cache	-->
 								<td>${statistics.queryCacheHitCount}</td>

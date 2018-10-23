@@ -62,7 +62,7 @@ public class Configurador extends WebMvcConfigurerAdapter {
 	}
 
 	/*
-	 * Este metodo, permiti que a request seja fechada
+	 * Este metodo, permite que a request seja fechada
 	 */
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
@@ -70,16 +70,14 @@ public class Configurador extends WebMvcConfigurerAdapter {
 	}
 
 	@Bean
-	public List<Categoria> categorias(CategoriaDao categoriaDao) {
+	public List<Categoria> categorias(CategoriaDao categoriaDao) {		
 		List<Categoria> categorias = categoriaDao.getCategorias();
-
 		return categorias;
 	}
 
 	@Bean
 	public List<Loja> lojas(LojaDao lojaDao) {
 		List<Loja> lojas = lojaDao.getLojas();
-
 		return lojas;
 	}
 

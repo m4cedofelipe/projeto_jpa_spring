@@ -10,15 +10,18 @@
 		<div class="panel-heading">${produto.loja.nome}</div>
 		<div class="panel-body">
 			<div class="container">
+				
 				<h3>${produto.nome}</h3>
+				
 				<div class="col-sm-7">
-					<legend></legend>
+					
 					<div class="col-sm-5">
 						<img src="${produto.linkDaFoto}" width="200" height="300">
 					</div>
+					
 					<div class="col-sm-7">
 						<p>${produto.descricao}</p>
-						<br />
+						<br>
 						<h3>
 							<fmt:formatNumber type="currency" value="${produto.preco}" />
 						</h3>
